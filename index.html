@@ -26,6 +26,9 @@
                     <a href="#hotels" class="nav-link">Hotels</a>
                 </li>
                 <li class="nav-item">
+                    <a href="#student-hostels" class="nav-link">Student Hostels</a>
+                </li>
+                <li class="nav-item">
                     <a href="#search" class="nav-link">Search</a>
                 </li>
             </ul>
@@ -64,6 +67,10 @@
                         <i class="fas fa-hotel"></i>
                         Hotels
                     </button>
+                    <button class="btn btn-secondary" onclick="showSection('student-hostels')">
+                        <i class="fas fa-graduation-cap"></i>
+                        Student Hostels
+                    </button>
                 </div>
             </div>
             <div class="hero-image">
@@ -95,6 +102,7 @@
                         <option value="rent">For Rent</option>
                         <option value="sale">For Sale</option>
                         <option value="hotel">Hotels</option>
+                        <option value="hostel">Student Hostels</option>
                     </select>
                     <select id="priceFilter" class="filter-select">
                         <option value="all">All Prices</option>
@@ -190,6 +198,194 @@
         </div>
     </section>
 
+    <!-- Student Hostels Section -->
+    <section id="student-hostels" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Student Hostels</h2>
+                <p class="section-subtitle">Affordable and comfortable accommodation for students in Cumilla</p>
+            </div>
+            
+            <div class="hostels-grid" id="hostelsGrid">
+                <!-- Hostel cards will be dynamically generated -->
+            </div>
+
+            <!-- Hostel Details Modal -->
+            <div id="hostelModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 id="hostelModalTitle"></h3>
+                        <span class="close" onclick="closeModal('hostelModal')">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div id="hostelModalContent">
+                            <!-- Hostel details will be dynamically generated -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Authentication Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content auth-modal-content">
+            <div class="modal-header">
+                <h3 id="authModalTitle">Sign In to Continue</h3>
+                <span class="close" onclick="closeModal('authModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="auth-container">
+                    <div class="auth-tabs">
+                        <button class="auth-tab active" onclick="switchAuthTab('signin')">Sign In</button>
+                        <button class="auth-tab" onclick="switchAuthTab('signup')">Sign Up</button>
+                    </div>
+                    
+                    <div id="signinForm" class="auth-form active">
+                        <h4>Choose your sign-in method</h4>
+                        
+                        <button class="btn btn-auth btn-google" onclick="authenticateWith('google')">
+                            <i class="fab fa-google"></i>
+                            Continue with Google
+                        </button>
+                        
+                        <div class="auth-divider">
+                            <span>or</span>
+                        </div>
+                        
+                        <div class="auth-toggle-options">
+                            <button class="auth-option active" onclick="toggleAuthMethod('email')">
+                                <i class="fas fa-envelope"></i> Email
+                            </button>
+                            <button class="auth-option" onclick="toggleAuthMethod('phone')">
+                                <i class="fas fa-phone"></i> Phone
+                            </button>
+                        </div>
+                        
+                        <form id="emailSigninForm" class="auth-method-form active">
+                            <div class="form-group">
+                                <input type="email" id="signinEmail" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="signinPassword" placeholder="Enter your password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+                        </form>
+                        
+                        <form id="phoneSigninForm" class="auth-method-form">
+                            <div class="form-group">
+                                <input type="tel" id="signinPhone" placeholder="Enter your phone number" required>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-full" onclick="sendOTP('signin')">Send OTP</button>
+                            <div id="otpSigninForm" class="otp-form hidden">
+                                <div class="form-group">
+                                    <input type="text" id="signinOTP" placeholder="Enter OTP" maxlength="6" required>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-full" onclick="verifyOTP('signin')">Verify OTP</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div id="signupForm" class="auth-form">
+                        <h4>Create your account</h4>
+                        
+                        <button class="btn btn-auth btn-google" onclick="authenticateWith('google')">
+                            <i class="fab fa-google"></i>
+                            Sign up with Google
+                        </button>
+                        
+                        <div class="auth-divider">
+                            <span>or</span>
+                        </div>
+                        
+                        <div class="auth-toggle-options">
+                            <button class="auth-option active" onclick="toggleAuthMethod('email')">
+                                <i class="fas fa-envelope"></i> Email
+                            </button>
+                            <button class="auth-option" onclick="toggleAuthMethod('phone')">
+                                <i class="fas fa-phone"></i> Phone
+                            </button>
+                        </div>
+                        
+                        <form id="emailSignupForm" class="auth-method-form active">
+                            <div class="form-group">
+                                <input type="text" id="signupName" placeholder="Full Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="signupPassword" placeholder="Create password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                        </form>
+                        
+                        <form id="phoneSignupForm" class="auth-method-form">
+                            <div class="form-group">
+                                <input type="text" id="signupNamePhone" placeholder="Full Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="signupPhone" placeholder="Enter your phone number" required>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-full" onclick="sendOTP('signup')">Send OTP</button>
+                            <div id="otpSignupForm" class="otp-form hidden">
+                                <div class="form-group">
+                                    <input type="text" id="signupOTP" placeholder="Enter OTP" maxlength="6" required>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-full" onclick="verifyOTP('signup')">Create Account</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schedule Visit Modal -->
+    <div id="scheduleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Schedule Visit</h3>
+                <span class="close" onclick="closeModal('scheduleModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="schedule-container">
+                    <h4 id="schedulePropertyName"></h4>
+                    <form id="scheduleForm">
+                        <div class="form-group">
+                            <label>Visit Type</label>
+                            <select id="visitType" required>
+                                <option value="in-person">In-Person Visit</option>
+                                <option value="virtual">Virtual Tour</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred Date</label>
+                            <input type="date" id="visitDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred Time</label>
+                            <select id="visitTime" required>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                                <option value="17:00">5:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Additional Notes (Optional)</label>
+                            <textarea id="visitNotes" placeholder="Any specific requirements or questions?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Schedule Visit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -204,6 +400,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#real-estate">Real Estate</a></li>
                         <li><a href="#hotels">Hotels</a></li>
+                        <li><a href="#student-hostels">Student Hostels</a></li>
                         <li><a href="#search">Search</a></li>
                     </ul>
                 </div>

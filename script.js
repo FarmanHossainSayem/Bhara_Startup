@@ -265,7 +265,114 @@ const hotels = [
     }
 ];
 
+// Sample data for student hostels
+const studentHostels = [
+    {
+        id: 1,
+        name: "Cumilla University Student Hostel",
+        location: "Cumilla University Area",
+        price: 8000,
+        image: "🏠",
+        type: "hostel",
+        status: "available",
+        capacity: 4,
+        roomType: "Shared Room",
+        gender: "Male",
+        description: "Clean and affordable hostel near Cumilla University with all basic amenities for students.",
+        facilities: ["Free WiFi", "Study Room", "Common Kitchen", "Laundry", "Security", "Generator"],
+        contact: {
+            phone: "+880-1234-567900",
+            whatsapp: "+880-1234-567900",
+            email: "info@cuniverse-hostel.com"
+        },
+        category: "hostel"
+    },
+    {
+        id: 2,
+        name: "Scholar's Residence",
+        location: "Kandirpar, Near Cumilla College",
+        price: 6500,
+        image: "🏡",
+        type: "hostel",
+        status: "available",
+        capacity: 6,
+        roomType: "Shared Room",
+        gender: "Female",
+        description: "Safe and comfortable hostel for female students with 24/7 security and home-like environment.",
+        facilities: ["Free WiFi", "Study Room", "Common Kitchen", "Laundry", "24/7 Security", "Garden"],
+        contact: {
+            phone: "+880-1234-567901",
+            whatsapp: "+880-1234-567901",
+            email: "contact@scholars-residence.com"
+        },
+        category: "hostel"
+    },
+    {
+        id: 3,
+        name: "Metro Student Lodge",
+        location: "Tomsom Bridge Area",
+        price: 9500,
+        image: "🏘️",
+        type: "hostel",
+        status: "available",
+        capacity: 2,
+        roomType: "Twin Sharing",
+        gender: "Co-ed",
+        description: "Modern hostel with air-conditioned rooms and premium facilities for serious students.",
+        facilities: ["Free WiFi", "AC Rooms", "Study Room", "Common Kitchen", "Laundry", "Security", "Gym"],
+        contact: {
+            phone: "+880-1234-567902",
+            whatsapp: "+880-1234-567902",
+            email: "booking@metrolodge.com"
+        },
+        category: "hostel"
+    },
+    {
+        id: 4,
+        name: "Green Valley Student Home",
+        location: "Kotbari, Cumilla",
+        price: 7000,
+        image: "🌳",
+        type: "hostel",
+        status: "occupied",
+        capacity: 8,
+        roomType: "Shared Room",
+        gender: "Male",
+        description: "Peaceful hostel surrounded by nature, perfect for students who prefer a quiet study environment.",
+        facilities: ["Free WiFi", "Study Room", "Common Kitchen", "Laundry", "Security", "Garden", "Library"],
+        contact: {
+            phone: "+880-1234-567903",
+            whatsapp: "+880-1234-567903",
+            email: "info@greenvalley-home.com"
+        },
+        category: "hostel"
+    },
+    {
+        id: 5,
+        name: "Smart Student Hub",
+        location: "Cumilla Sadar",
+        price: 10000,
+        image: "🏢",
+        type: "hostel",
+        status: "available",
+        capacity: 1,
+        roomType: "Single Room",
+        gender: "Co-ed",
+        description: "Premium single rooms with modern amenities and high-speed internet for focused studying.",
+        facilities: ["Free WiFi", "Single Rooms", "Study Desk", "AC", "Common Kitchen", "Laundry", "Security"],
+        contact: {
+            phone: "+880-1234-567904",
+            whatsapp: "+880-1234-567904",
+            email: "hub@smartstudent.com"
+        },
+        category: "hostel"
+    }
+];
+
 // Global variables
+let isUserLoggedIn = false;
+let currentUser = null;
+let pendingAction = null;
 let currentSection = 'home';
 let filteredData = [];
 
@@ -285,6 +392,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
     renderDevelopers();
     renderHotels();
+    renderStudentHostels();
     
     // Check for saved theme preference
     const savedTheme = localStorage.getItem('theme');
@@ -663,7 +771,8 @@ function getAllProperties() {
         dev.flats.map(flat => ({...flat, developerName: dev.name, category: 'real-estate'}))
     );
     const allHotels = hotels.map(hotel => ({...hotel, category: 'hotel'}));
-    return [...allFlats, ...allHotels];
+    const allHostels = studentHostels.map(hostel => ({...hostel, category: 'hostel'}));
+    return [...allFlats, ...allHotels, ...allHostels];
 }
 
 function handleSearch() {
@@ -696,6 +805,8 @@ function applyFilters() {
     if (typeValue !== 'all') {
         if (typeValue === 'hotel') {
             filtered = filtered.filter(item => item.category === 'hotel');
+        } else if (typeValue === 'hostel') {
+            filtered = filtered.filter(item => item.category === 'hostel');
         } else {
             filtered = filtered.filter(item => item.type === typeValue);
         }
@@ -732,6 +843,8 @@ function displaySearchResults() {
         updateDevelopersDisplay();
     } else if (currentSection === 'hotels') {
         updateHotelsDisplay();
+    } else if (currentSection === 'student-hostels') {
+        updateHostelsDisplay();
     }
 }
 
@@ -792,10 +905,550 @@ function getStatusBadge(status) {
     return `<span class="flat-status ${statusClasses[status]}">${status}</span>`;
 }
 
+// Student Hostels Functions
+function renderStudentHostels() {
+    const hostelsGrid = document.getElementById('hostelsGrid');
+    hostelsGrid.innerHTML = '';
+    
+    studentHostels.forEach(hostel => {
+        const hostelCard = createHostelCard(hostel);
+        hostelsGrid.appendChild(hostelCard);
+    });
+}
+
+function createHostelCard(hostel) {
+    const card = document.createElement('div');
+    card.className = 'hostel-card';
+    card.onclick = () => showHostelDetails(hostel);
+    
+    const statusClass = hostel.status === 'available' ? 'status-available-hostel' : 'status-occupied';
+    
+    card.innerHTML = `
+        <div class="hostel-image">${hostel.image}</div>
+        <div class="hostel-content">
+            <h3 class="hostel-name">${hostel.name}</h3>
+            <p class="hostel-location">
+                <i class="fas fa-map-marker-alt"></i> ${hostel.location}
+            </p>
+            <div class="hostel-price">৳${hostel.price.toLocaleString()}/month</div>
+            <p class="text-secondary mb-1">
+                <i class="fas fa-users"></i> ${hostel.capacity} ${hostel.capacity === 1 ? 'person' : 'people'} • 
+                <i class="fas fa-bed"></i> ${hostel.roomType}
+            </p>
+            <span class="flat-status ${statusClass}">${hostel.status}</span>
+            <div class="hostel-actions mt-2">
+                <button class="btn btn-small btn-primary">View Details</button>
+                <button class="btn btn-small btn-outline" onclick="event.stopPropagation(); initiateContact('${hostel.contact.phone}', 'call')">
+                    <i class="fas fa-phone"></i> Call
+                </button>
+            </div>
+        </div>
+    `;
+    
+    return card;
+}
+
+function showHostelDetails(hostel) {
+    const modal = document.getElementById('hostelModal');
+    const modalTitle = document.getElementById('hostelModalTitle');
+    const modalContent = document.getElementById('hostelModalContent');
+    
+    modalTitle.textContent = hostel.name;
+    
+    const statusClass = hostel.status === 'available' ? 'status-available-hostel' : 'status-occupied';
+    
+    modalContent.innerHTML = `
+        <div class="flat-details">
+            <div class="flat-images">
+                <div class="flat-image">${hostel.image}</div>
+                <div class="flat-image">🛏️</div>
+                <div class="flat-image">📚</div>
+            </div>
+            
+            <div class="flat-info">
+                <div class="info-section">
+                    <h4>Hostel Information</h4>
+                    <ul class="info-list">
+                        <li><span>Location</span><span>${hostel.location}</span></li>
+                        <li><span>Price per month</span><span>৳${hostel.price.toLocaleString()}</span></li>
+                        <li><span>Capacity</span><span>${hostel.capacity} ${hostel.capacity === 1 ? 'person' : 'people'}</span></li>
+                        <li><span>Room Type</span><span>${hostel.roomType}</span></li>
+                        <li><span>Gender</span><span>${hostel.gender}</span></li>
+                        <li><span>Status</span><span class="flat-status ${statusClass}">${hostel.status}</span></li>
+                    </ul>
+                </div>
+                
+                <div class="info-section">
+                    <h4>Facilities</h4>
+                    <ul class="info-list">
+                        ${hostel.facilities.map(facility => `<li><span>${facility}</span><span>✓</span></li>`).join('')}
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <h4>Description</h4>
+                <p>${hostel.description}</p>
+            </div>
+            
+            <div class="contact-buttons">
+                <button class="btn btn-contact btn-call" onclick="initiateContact('${hostel.contact.phone}', 'call')">
+                    <i class="fas fa-phone"></i> Call
+                </button>
+                <button class="btn btn-contact btn-schedule" onclick="initiateSchedule('${hostel.name}', 'hostel')">
+                    <i class="fas fa-calendar"></i> Schedule Visit
+                </button>
+                <button class="btn btn-contact btn-whatsapp" onclick="contactOwner('${hostel.contact.whatsapp}', 'whatsapp')">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </button>
+                <button class="btn btn-contact btn-email" onclick="contactOwner('${hostel.contact.email}', 'email')">
+                    <i class="fas fa-envelope"></i> Email
+                </button>
+            </div>
+        </div>
+    `;
+    
+    modal.style.display = 'block';
+}
+
+function updateHostelsDisplay() {
+    const relevantHostels = filteredData.filter(item => item.category === 'hostel');
+    
+    const hostelsGrid = document.getElementById('hostelsGrid');
+    hostelsGrid.innerHTML = '';
+    
+    relevantHostels.forEach(hostel => {
+        const hostelCard = createHostelCard(hostel);
+        hostelsGrid.appendChild(hostelCard);
+    });
+}
+
+// Authentication Functions
+function initiateContact(contact, type) {
+    if (type === 'call' || !isUserLoggedIn) {
+        if (type === 'call') {
+            contactOwner(contact, type);
+        } else {
+            pendingAction = { action: 'contact', contact, type };
+            showAuthModal();
+        }
+    } else {
+        contactOwner(contact, type);
+    }
+}
+
+function initiateSchedule(propertyName, propertyType) {
+    if (!isUserLoggedIn) {
+        pendingAction = { action: 'schedule', propertyName, propertyType };
+        showAuthModal();
+    } else {
+        showScheduleModal(propertyName, propertyType);
+    }
+}
+
+function showAuthModal() {
+    const modal = document.getElementById('authModal');
+    modal.style.display = 'block';
+}
+
+function switchAuthTab(tab) {
+    // Remove active class from all tabs and forms
+    document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+    
+    // Add active class to selected tab and form
+    event.target.classList.add('active');
+    document.getElementById(tab + 'Form').classList.add('active');
+    
+    // Update modal title
+    const title = tab === 'signin' ? 'Sign In to Continue' : 'Create Your Account';
+    document.getElementById('authModalTitle').textContent = title;
+}
+
+function toggleAuthMethod(method) {
+    const currentForm = document.querySelector('.auth-form.active');
+    
+    // Remove active class from all auth options
+    currentForm.querySelectorAll('.auth-option').forEach(option => {
+        option.classList.remove('active');
+    });
+    
+    // Remove active class from all method forms
+    currentForm.querySelectorAll('.auth-method-form').forEach(form => {
+        form.classList.remove('active');
+    });
+    
+    // Add active class to selected option
+    event.target.classList.add('active');
+    
+    // Show corresponding form
+    const activeTab = document.querySelector('.auth-tab.active').textContent.toLowerCase().replace(' ', '');
+    const formId = method + activeTab.charAt(0).toUpperCase() + activeTab.slice(1) + 'Form';
+    document.getElementById(formId).classList.add('active');
+}
+
+function authenticateWith(provider) {
+    const button = event.target;
+    button.classList.add('loading');
+    button.disabled = true;
+    
+    setTimeout(() => {
+        if (provider === 'google') {
+            // Simulate Google authentication
+            currentUser = {
+                name: "John Doe",
+                email: "john.doe@gmail.com",
+                provider: "google"
+            };
+            isUserLoggedIn = true;
+            showSuccessMessage("Successfully signed in with Google!");
+            handleSuccessfulAuth();
+        }
+        
+        button.classList.remove('loading');
+        button.disabled = false;
+    }, 2000);
+}
+
+function sendOTP(formType) {
+    const phoneInput = document.getElementById(formType + 'Phone');
+    const button = event.target;
+    
+    if (!phoneInput.value) {
+        showErrorMessage("Please enter your phone number");
+        return;
+    }
+    
+    button.classList.add('loading');
+    button.disabled = true;
+    
+    setTimeout(() => {
+        // Show OTP form
+        document.getElementById('otp' + formType.charAt(0).toUpperCase() + formType.slice(1) + 'Form').classList.remove('hidden');
+        showSuccessMessage("OTP sent to your phone number!");
+        
+        button.classList.remove('loading');
+        button.disabled = false;
+    }, 2000);
+}
+
+function verifyOTP(formType) {
+    const otpInput = document.getElementById(formType + 'OTP');
+    const button = event.target;
+    
+    if (!otpInput.value || otpInput.value.length !== 6) {
+        showErrorMessage("Please enter a valid 6-digit OTP");
+        return;
+    }
+    
+    button.classList.add('loading');
+    button.disabled = true;
+    
+    setTimeout(() => {
+        // Simulate OTP verification
+        const phoneInput = document.getElementById(formType + 'Phone');
+        currentUser = {
+            name: formType === 'signup' ? document.getElementById(formType + 'NamePhone').value : "User",
+            phone: phoneInput.value,
+            provider: "phone"
+        };
+        isUserLoggedIn = true;
+        showSuccessMessage("Successfully verified!");
+        handleSuccessfulAuth();
+        
+        button.classList.remove('loading');
+        button.disabled = false;
+    }, 2000);
+}
+
+function handleSuccessfulAuth() {
+    setTimeout(() => {
+        closeModal('authModal');
+        
+        // Execute pending action if any
+        if (pendingAction) {
+            if (pendingAction.action === 'contact') {
+                contactOwner(pendingAction.contact, pendingAction.type);
+            } else if (pendingAction.action === 'schedule') {
+                showScheduleModal(pendingAction.propertyName, pendingAction.propertyType);
+            }
+            pendingAction = null;
+        }
+    }, 1500);
+}
+
+// Schedule Visit Functions
+function showScheduleModal(propertyName, propertyType) {
+    const modal = document.getElementById('scheduleModal');
+    const propertyNameElement = document.getElementById('schedulePropertyName');
+    
+    propertyNameElement.textContent = propertyName;
+    
+    // Set minimum date to today
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('visitDate').min = today;
+    
+    modal.style.display = 'block';
+}
+
+// Enhanced Flat Details with Schedule Option
+function showEnhancedFlatDetails(flat) {
+    const modal = document.getElementById('flatModal');
+    const modalTitle = document.getElementById('flatModalTitle');
+    const modalContent = document.getElementById('flatModalContent');
+    
+    modalTitle.textContent = flat.name;
+    
+    const priceText = flat.type === 'rent' 
+        ? `৳${flat.price.toLocaleString()}/month` 
+        : `৳${flat.price.toLocaleString()}`;
+    
+    modalContent.innerHTML = `
+        <div class="flat-details">
+            <div class="flat-images">
+                <div class="flat-image">🏢</div>
+                <div class="flat-image">🛏️</div>
+                <div class="flat-image">🚿</div>
+            </div>
+            
+            <div class="flat-info">
+                <div class="info-section">
+                    <h4>Basic Information</h4>
+                    <ul class="info-list">
+                        <li><span>Location</span><span>${flat.location}</span></li>
+                        <li><span>Size</span><span>${flat.size}</span></li>
+                        <li><span>Bedrooms</span><span>${flat.bedrooms}</span></li>
+                        <li><span>Bathrooms</span><span>${flat.bathrooms}</span></li>
+                        <li><span>Floor</span><span>${flat.floor}</span></li>
+                        <li><span>Status</span><span class="flat-status status-${flat.status}">${flat.status}</span></li>
+                    </ul>
+                </div>
+                
+                <div class="info-section">
+                    <h4>Price & Type</h4>
+                    <ul class="info-list">
+                        <li><span>Price</span><span>${priceText}</span></li>
+                        <li><span>Type</span><span>${flat.type === 'rent' ? 'For Rent' : 'For Sale'}</span></li>
+                    </ul>
+                    
+                    <h4>Facilities</h4>
+                    <ul class="info-list">
+                        ${flat.facilities.map(facility => `<li><span>${facility}</span><span>✓</span></li>`).join('')}
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <h4>Description</h4>
+                <p>${flat.description}</p>
+            </div>
+            
+            <div class="contact-buttons">
+                <button class="btn btn-contact btn-call" onclick="initiateContact('${flat.contact.phone}', 'call')">
+                    <i class="fas fa-phone"></i> Call
+                </button>
+                <button class="btn btn-contact btn-schedule" onclick="initiateSchedule('${flat.name}', 'flat')">
+                    <i class="fas fa-calendar"></i> Schedule Visit
+                </button>
+                <button class="btn btn-contact btn-virtual" onclick="initiateSchedule('${flat.name}', 'virtual')">
+                    <i class="fas fa-video"></i> Virtual Tour
+                </button>
+                <button class="btn btn-contact btn-whatsapp" onclick="contactOwner('${flat.contact.whatsapp}', 'whatsapp')">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </button>
+                <button class="btn btn-contact btn-email" onclick="contactOwner('${flat.contact.email}', 'email')">
+                    <i class="fas fa-envelope"></i> Email
+                </button>
+            </div>
+        </div>
+    `;
+    
+    modal.style.display = 'block';
+}
+
+// Enhanced Hotel Details with Schedule Option
+function showEnhancedHotelDetails(hotel) {
+    const modal = document.getElementById('hotelModal');
+    const modalTitle = document.getElementById('hotelModalTitle');
+    const modalContent = document.getElementById('hotelModalContent');
+    
+    modalTitle.textContent = hotel.name;
+    
+    modalContent.innerHTML = `
+        <div class="flat-details">
+            <div class="flat-images">
+                <div class="flat-image">${hotel.image}</div>
+                <div class="flat-image">🛏️</div>
+                <div class="flat-image">🍽️</div>
+            </div>
+            
+            <div class="flat-info">
+                <div class="info-section">
+                    <h4>Hotel Information</h4>
+                    <ul class="info-list">
+                        <li><span>Location</span><span>${hotel.location}</span></li>
+                        <li><span>Price per night</span><span>৳${hotel.price.toLocaleString()}</span></li>
+                    </ul>
+                </div>
+                
+                <div class="info-section">
+                    <h4>Facilities</h4>
+                    <ul class="info-list">
+                        ${hotel.facilities.map(facility => `<li><span>${facility}</span><span>✓</span></li>`).join('')}
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <h4>Description</h4>
+                <p>${hotel.description}</p>
+            </div>
+            
+            <div class="contact-buttons">
+                <button class="btn btn-contact btn-call" onclick="initiateContact('${hotel.contact.phone}', 'call')">
+                    <i class="fas fa-phone"></i> Call
+                </button>
+                <button class="btn btn-contact btn-schedule" onclick="initiateSchedule('${hotel.name}', 'hotel')">
+                    <i class="fas fa-calendar"></i> Book Room
+                </button>
+                <button class="btn btn-contact btn-whatsapp" onclick="contactOwner('${hotel.contact.whatsapp}', 'whatsapp')">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </button>
+                <button class="btn btn-contact btn-email" onclick="contactOwner('${hotel.contact.email}', 'email')">
+                    <i class="fas fa-envelope"></i> Email
+                </button>
+                <button class="btn btn-contact btn-secondary" onclick="window.open('${hotel.mapLink}', '_blank')">
+                    <i class="fas fa-map"></i> View on Map
+                </button>
+            </div>
+        </div>
+    `;
+    
+    modal.style.display = 'block';
+}
+
+// Form Submission Handlers
+document.addEventListener('DOMContentLoaded', function() {
+    // Email signin form
+    document.getElementById('emailSigninForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('signinEmail').value;
+        const password = document.getElementById('signinPassword').value;
+        
+        if (email && password) {
+            const button = e.target.querySelector('button[type="submit"]');
+            button.classList.add('loading');
+            button.disabled = true;
+            
+            setTimeout(() => {
+                currentUser = { name: "User", email, provider: "email" };
+                isUserLoggedIn = true;
+                showSuccessMessage("Successfully signed in!");
+                handleSuccessfulAuth();
+                
+                button.classList.remove('loading');
+                button.disabled = false;
+            }, 2000);
+        }
+    });
+    
+    // Email signup form
+    document.getElementById('emailSignupForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('signupName').value;
+        const email = document.getElementById('signupEmail').value;
+        const password = document.getElementById('signupPassword').value;
+        
+        if (name && email && password) {
+            const button = e.target.querySelector('button[type="submit"]');
+            button.classList.add('loading');
+            button.disabled = true;
+            
+            setTimeout(() => {
+                currentUser = { name, email, provider: "email" };
+                isUserLoggedIn = true;
+                showSuccessMessage("Account created successfully!");
+                handleSuccessfulAuth();
+                
+                button.classList.remove('loading');
+                button.disabled = false;
+            }, 2000);
+        }
+    });
+    
+    // Schedule form
+    document.getElementById('scheduleForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const visitType = document.getElementById('visitType').value;
+        const visitDate = document.getElementById('visitDate').value;
+        const visitTime = document.getElementById('visitTime').value;
+        const notes = document.getElementById('visitNotes').value;
+        
+        const button = e.target.querySelector('button[type="submit"]');
+        button.classList.add('loading');
+        button.disabled = true;
+        
+        setTimeout(() => {
+            showSuccessMessage(`${visitType === 'in-person' ? 'In-person visit' : 'Virtual tour'} scheduled for ${visitDate} at ${visitTime}`);
+            closeModal('scheduleModal');
+            
+            button.classList.remove('loading');
+            button.disabled = false;
+            
+            // Reset form
+            e.target.reset();
+        }, 2000);
+    });
+});
+
+// Utility Functions
+function showSuccessMessage(message) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'message success';
+    messageDiv.textContent = message;
+    
+    // Insert at top of modal body if modal is open
+    const openModal = document.querySelector('.modal[style*="block"] .modal-body');
+    if (openModal) {
+        openModal.insertBefore(messageDiv, openModal.firstChild);
+        setTimeout(() => messageDiv.remove(), 5000);
+    }
+}
+
+function showErrorMessage(message) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'message error';
+    messageDiv.textContent = message;
+    
+    // Insert at top of modal body if modal is open
+    const openModal = document.querySelector('.modal[style*="block"] .modal-body');
+    if (openModal) {
+        openModal.insertBefore(messageDiv, openModal.firstChild);
+        setTimeout(() => messageDiv.remove(), 5000);
+    }
+}
+
+// Override existing functions to use enhanced versions
+function showFlatDetails(flat) {
+    showEnhancedFlatDetails(flat);
+}
+
+function showHotelDetails(hotel) {
+    showEnhancedHotelDetails(hotel);
+}
+
 // Export functions for global access
 window.showSection = showSection;
 window.showDeveloperFlats = showDeveloperFlats;
 window.showFlatDetails = showFlatDetails;
 window.showHotelDetails = showHotelDetails;
+window.showHostelDetails = showHostelDetails;
 window.contactOwner = contactOwner;
 window.closeModal = closeModal;
+window.switchAuthTab = switchAuthTab;
+window.toggleAuthMethod = toggleAuthMethod;
+window.authenticateWith = authenticateWith;
+window.sendOTP = sendOTP;
+window.verifyOTP = verifyOTP;
+window.initiateContact = initiateContact;
+window.initiateSchedule = initiateSchedule;
