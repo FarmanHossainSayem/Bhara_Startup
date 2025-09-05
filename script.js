@@ -183,6 +183,1012 @@ const developers = [
                 }
             }
         ]
+    },
+    {
+        id: 5,
+        name: "Silver Developers Ltd",
+        logo: "SDL",
+        flatsCount: 10,
+        flats: [
+            {
+                id: 501,
+                name: "Silver Dream",
+                location: "Shaheed Shamsul Haque Sarak",
+                status: "available",
+                price: 20000,
+                type: "rent",
+                size: "1250 sq ft",
+                bedrooms: 3,
+                bathrooms: 2,
+                floor: "2nd Floor",
+                facilities: ["Parking", "Security", "Lift"],
+                description: "Comfortable 3-bedroom apartment with great ventilation and modern facilities.",
+                contact: {
+                    phone: "+8801712999980",
+                    whatsapp: "+8801712999980",
+                    email: "farukgoldsilver@yahoo.com"
+                }
+            },
+            {
+                id: 502,
+                name: "Silver Afia Garden",
+                location: "Doctor Para, Badur Tola, Sadar, Cumilla",
+                status: "available",
+                price: 35000,
+                type: "sale",
+                size: "A=1405sft, B=1240sft, C=1026sft, D=1000sft",
+                bedrooms: 3,
+                bathrooms: 3,
+                "number of apartments": 32,
+                "number of Units": 4,
+                lift: 1,
+                Facing: "west",
+                "total floors": "GF to 8th",
+                facilities: ["Parking", "Generator", "Security", "Lift", "Community Hall"],
+                "sort summary": "3 bed, 3 baths, Living, Family Living, Dining, Kitchen & 3 verandas",
+                contact: {
+                    phone: "+880-1234-567894",
+                    whatsapp: "+880-1234-567894",
+                    email: "contact@dreamhomes.com"
+                }
+            }
+        ]
+    },
+    {
+        id: 6,
+        name: "AFSU Developers Ltd.",
+        logo: "AFSU",
+        flatsCount: 10,
+        flats: [
+            {
+                id: 501,
+                name: "AFSU Residency A-202",
+                location: "Kotbari, Cumilla",
+                status: "available",
+                price: 21000,
+                type: "rent",
+                size: "1250 sq ft",
+                bedrooms: 3,
+                bathrooms: 2,
+                floor: "2nd Floor",
+                facilities: ["Parking", "Security", "Lift"],
+                description: "Modern 3-bedroom apartment in Kotbari, Cumilla with all basic facilities. Ideal for small families.",
+                contact: {
+                    phone: "+880-1234-567895",
+                    whatsapp: "+880-1234-567895",
+                    email: "contact@afsudevelopers.com"
+                }
+            },
+            {
+                id: 502,
+                name: "AFSU Heights B-305",
+                location: "Tomsom Bridge, Cumilla",
+                status: "available",
+                price: 3600000,
+                type: "sale",
+                size: "1500 sq ft",
+                bedrooms: 4,
+                bathrooms: 3,
+                floor: "3rd Floor",
+                facilities: ["Parking", "Generator", "Security", "Lift", "Community Hall"],
+                description: "Spacious 4-bedroom apartment for sale in Tomsom Bridge area, Cumilla with luxury features and community hall access.",
+                contact: {
+                    phone: "+880-1234-567895",
+                    whatsapp: "+880-1234-567895",
+                    email: "contact@afsudevelopers.com"
+                }
+            }
+        ]
+    },
+    {
+        id: 7,
+        name: "Fair and Faith Trading Ltd.",
+        logo: "FFT",
+        flatsCount: 9,
+        flats: [
+            {
+                id: 601,
+                name: "Fair Residency A-101",
+                location: "Kandirpar, Cumilla",
+                status: "available",
+                price: 19000,
+                type: "rent",
+                size: "1150 sq ft",
+                bedrooms: 3,
+                bathrooms: 2,
+                floor: "1st Floor",
+                facilities: ["Parking", "Security", "Lift"],
+                description: "Comfortable 3-bedroom apartment in Kandirpar, Cumilla with all modern amenities.",
+                contact: {
+                    phone: "+880-1234-567896",
+                    whatsapp: "+880-1234-567896",
+                    email: "info@fairfaith.com"
+                }
+            },
+            {
+                id: 602,
+                name: "Faith Tower B-304",
+                location: "Cumilla Cantonment",
+                status: "rented",
+                price: 28000,
+                type: "rent",
+                size: "1450 sq ft",
+                bedrooms: 4,
+                bathrooms: 3,
+                floor: "3rd Floor",
+                facilities: ["Parking", "Generator", "Security", "Lift", "Playground"],
+                description: "Spacious 4-bedroom apartment in Cantonment area with extra facilities and playground access.",
+                contact: {
+                    phone: "+880-1234-567896",
+                    whatsapp: "+880-1234-567896",
+                    email: "info@fairfaith.com"
+                }
+            },
+            {
+                id: 603,
+                name: "Faith Court C-502",
+                location: "Kotbari, Cumilla",
+                status: "available",
+                price: 3300000,
+                type: "sale",
+                size: "1550 sq ft",
+                bedrooms: 4,
+                bathrooms: 3,
+                floor: "5th Floor",
+                facilities: ["Parking", "Security", "Lift", "Community Hall"],
+                description: "Luxury 4-bedroom flat for sale in Kotbari, Cumilla. Perfect for buyers looking for modern lifestyle.",
+                contact: {
+                    phone: "+880-1234-567896",
+                    whatsapp: "+880-1234-567896",
+                    email: "info@fairfaith.com"
+                }
+            }
+        ]
+    },
+    {
+        id: 8,
+        name: "Kazi Architect & Developments LTD",
+        logo: "KAD",
+        flatsCount: 7,
+        flats: [
+            {
+                id: 701,
+                name: "Kazi Residency A-204",
+                location: "Racecourse, Cumilla",
+                status: "available",
+                price: 24000,
+                type: "rent",
+                size: "1300 sq ft",
+                bedrooms: 3,
+                bathrooms: 2,
+                floor: "2nd Floor",
+                facilities: ["Parking", "Generator", "Security", "Lift"],
+                description: "Modern 3-bedroom apartment at Racecourse with excellent ventilation and spacious living area.",
+                contact: {
+                    phone: "+880-1234-567897",
+                    whatsapp: "+880-1234-567897",
+                    email: "contact@kaziarchitect.com"
+                }
+            },
+            {
+                id: 702,
+                name: "Kazi Heights B-401",
+                location: "Tomsom Bridge, Cumilla",
+                status: "available",
+                price: 27000,
+                type: "rent",
+                size: "1450 sq ft",
+                bedrooms: 4,
+                bathrooms: 3,
+                floor: "4th Floor",
+                facilities: ["Parking", "Security", "Lift", "Community Hall"],
+                description: "Spacious 4-bedroom apartment near Tomsom Bridge with community hall and modern design.",
+                contact: {
+                    phone: "+880-1234-567897",
+                    whatsapp: "+880-1234-567897",
+                    email: "contact@kaziarchitect.com"
+                }
+            },
+            {
+                id: 703,
+                name: "Kazi Villa C-101",
+                location: "Kotbari, Cumilla",
+                status: "sold",
+                price: 4200000,
+                type: "sale",
+                size: "2000 sq ft",
+                bedrooms: 5,
+                bathrooms: 4,
+                floor: "Ground Floor",
+                facilities: ["Parking", "Garden", "Security"],
+                description: "Beautiful villa with private garden in Kotbari. Perfect for buyers seeking luxury and privacy.",
+                contact: {
+                    phone: "+880-1234-567897",
+                    whatsapp: "+880-1234-567897",
+                    email: "contact@kaziarchitect.com"
+                }
+            }
+        ]
+    },
+    {
+        id: 9,
+        name: "Latif Holdings Pvt. Ltd",
+        logo: "LHP",
+        flatsCount: 6,
+        flats: [
+            {
+                id: 801,
+                name: "Latif Residency A-303",
+                location: "Shashongacha, Cumilla",
+                status: "available",
+                price: 20000,
+                type: "rent",
+                size: "1200 sq ft",
+                bedrooms: 3,
+                bathrooms: 2,
+                floor: "3rd Floor",
+                facilities: ["Parking", "Generator", "Security", "Lift"],
+                description: "Affordable 3-bedroom apartment in Shashongacha, Cumilla with all essential amenities for families.",
+                contact: {
+                    phone: "+880-1234-567898",
+                    whatsapp: "+880-1234-567898",
+                    email: "info@latifholdings.com"
+                }
+            },
+            {
+                id: 802,
+                name: "Latif Heights B-502",
+                location: "Kandirpar, Cumilla",
+                status: "available",
+                price: 31000,
+                type: "rent",
+                size: "1550 sq ft",
+                bedrooms: 4,
+                bathrooms: 3,
+                floor: "5th Floor",
+                facilities: ["Parking", "Generator", "Security", "Lift", "Rooftop Garden"],
+                description: "Premium 4-bedroom flat in Kandirpar with rooftop garden access and modern living spaces.",
+                contact: {
+                    phone: "+880-1234-567898",
+                    whatsapp: "+880-1234-567898",
+                    email: "info@latifholdings.com"
+                }
+            },
+            {
+                id: 803,
+                name: "Latif Villa C-101",
+                location: "Cumilla Cantonment",
+                status: "sale",
+                price: 3800000,
+                type: "sale",
+                size: "1800 sq ft",
+                bedrooms: 5,
+                bathrooms: 4,
+                floor: "Ground Floor",
+                facilities: ["Parking", "Garden", "Security", "Generator"],
+                description: "Luxury villa in Cumilla Cantonment with private garden and premium lifestyle facilities.",
+                contact: {
+                    phone: "+880-1234-567898",
+                    whatsapp: "+880-1234-567898",
+                    email: "info@latifholdings.com"
+                }
+            }
+        ]
+    },
+    {
+        id: 10,
+        name: "Golden Builders",
+        logo: "GB",
+        flatsCount: 8,
+        flats: [
+            {
+                id: 901,
+                name: "Golden Residency A-201",
+                location: "Kandirpar, Cumilla",
+                status: "available",
+                price: 23000,
+                type: "rent",
+                size: "1280 sq ft",
+                bedrooms: 3,
+                bathrooms: 2,
+                floor: "2nd Floor",
+                facilities: ["Parking", "Security", "Lift", "Generator"],
+                description: "Comfortable 3-bedroom flat in central Kandirpar with modern facilities and great connectivity.",
+                contact: {
+                    phone: "+880-1234-567899",
+                    whatsapp: "+880-1234-567899",
+                    email: "info@goldenbuilders.com"
+                }
+            },
+            {
+                id: 902,
+                name: "Golden Tower B-404",
+                location: "Racecourse, Cumilla",
+                status: "available",
+                price: 26000,
+                type: "rent",
+                size: "1400 sq ft",
+                bedrooms: 4,
+                bathrooms: 3,
+                floor: "4th Floor",
+                facilities: ["Parking", "Security", "Lift", "Rooftop Garden"],
+                description: "Spacious 4-bedroom apartment in Racecourse, Cumilla with rooftop garden access.",
+                contact: {
+                    phone: "+880-1234-567899",
+                    whatsapp: "+880-1234-567899",
+                    email: "info@goldenbuilders.com"
+                }
+            },
+            {
+                id: 903,
+                name: "Golden Villa C-101",
+                location: "Kotbari, Cumilla",
+                status: "sale",
+                price: 4000000,
+                type: "sale",
+                size: "1900 sq ft",
+                bedrooms: 5,
+                bathrooms: 4,
+                floor: "Ground Floor",
+                facilities: ["Parking", "Garden", "Security"],
+                description: "Exclusive villa for sale in Kotbari with private garden and premium design, ideal for luxury living.",
+                contact: {
+                    phone: "+880-1234-567899",
+                    whatsapp: "+880-1234-567899",
+                    email: "info@goldenbuilders.com"
+                }
+            }
+        ]
+    },
+    {
+        id: 11,
+        name: "Sarna Kutir Developers Ltd",
+        logo: "SKDL",
+        flatsCount: 7,
+        flats: [
+            {
+                id: 1101,
+                name: "Sarna Kutir Residency A-202",
+                location: "Kandirpar, Cumilla",
+                status: "available",
+                price: 22000,
+                type: "rent",
+                size: "1250 sq ft",
+                bedrooms: 3,
+                bathrooms: 2,
+                floor: "2nd Floor",
+                facilities: ["Parking", "Security", "Lift", "Generator"],
+                description: "Well-planned 3-bedroom flat in Kandirpar, Cumilla with spacious rooms and modern amenities.",
+                contact: {
+                    phone: "+880-1234-567811",
+                    whatsapp: "+880-1234-567811",
+                    email: "info@sarnakutir.com"
+                }
+            },
+            {
+                id: 1102,
+                name: "Sarna Heights B-305",
+                location: "Shashongacha, Cumilla",
+                status: "available",
+                price: 27000,
+                type: "rent",
+                size: "1450 sq ft",
+                bedrooms: 4,
+                bathrooms: 3,
+                floor: "3rd Floor",
+                facilities: ["Parking", "Security", "Lift", "Rooftop Garden"],
+                description: "Modern 4-bedroom apartment in Shashongacha with rooftop garden and premium fittings.",
+                contact: {
+                    phone: "+880-1234-567811",
+                    whatsapp: "+880-1234-567811",
+                    email: "info@sarnakutir.com"
+                }
+            },
+            {
+                id: 1103,
+                name: "Sarna Villa C-101",
+                location: "Kotbari, Cumilla",
+                status: "sale",
+                price: 3900000,
+                type: "sale",
+                size: "1850 sq ft",
+                bedrooms: 5,
+                bathrooms: 4,
+                floor: "Ground Floor",
+                facilities: ["Parking", "Garden", "Security", "Generator"],
+                description: "Elegant villa in Kotbari with private garden, designed for families who seek comfort and exclusivity.",
+                contact: {
+                    phone: "+880-1234-567811",
+                    whatsapp: "+880-1234-567811",
+                    email: "info@sarnakutir.com"
+                }
+            }
+        ]
+    },
+    {
+        id: 12,
+        name: "People’s Real Estate LTD",
+        logo: "PRE",
+        flatsCount: 9,
+        flats: [
+            {
+                id: 1201,
+                name: "People’s Residency A-102",
+                location: "Racecourse, Cumilla",
+                status: "available",
+                price: 21000,
+                type: "rent",
+                size: "1200 sq ft",
+                bedrooms: 3,
+                bathrooms: 2,
+                floor: "1st Floor",
+                facilities: ["Parking", "Security", "Lift"],
+                description: "Affordable 3-bedroom flat at Racecourse, Cumilla. Perfect for small families seeking comfort and convenience.",
+                contact: {
+                    phone: "+880-1234-567812",
+                    whatsapp: "+880-1234-567812",
+                    email: "contact@peoplesrealestate.com"
+                }
+            },
+            {
+                id: 1202,
+                name: "People’s Heights B-304",
+                location: "Tomsom Bridge, Cumilla",
+                status: "available",
+                price: 26000,
+                type: "rent",
+                size: "1400 sq ft",
+                bedrooms: 4,
+                bathrooms: 3,
+                floor: "3rd Floor",
+                facilities: ["Parking", "Security", "Lift", "Generator"],
+                description: "Spacious 4-bedroom apartment near Tomsom Bridge with backup generator and modern design.",
+                contact: {
+                    phone: "+880-1234-567812",
+                    whatsapp: "+880-1234-567812",
+                    email: "contact@peoplesrealestate.com"
+                }
+            },
+            {
+                id: 1203,
+                name: "People’s Villa C-201",
+                location: "Kotbari, Cumilla",
+                status: "sale",
+                price: 3700000,
+                type: "sale",
+                size: "1800 sq ft",
+                bedrooms: 5,
+                bathrooms: 4,
+                floor: "Ground Floor",
+                facilities: ["Parking", "Garden", "Security", "Community Hall"],
+                description: "Premium villa for sale in Kotbari with garden space and community facilities, designed for luxury living.",
+                contact: {
+                    phone: "+880-1234-567812",
+                    whatsapp: "+880-1234-567812",
+                    email: "contact@peoplesrealestate.com"
+                }
+            }
+        ]
+    },
+    {
+        id: 13,
+        name: "Asra Properties",
+        logo: "ASP",
+        flatsCount: 8,
+        flats: [
+            {
+                id: 1301,
+                name: "Asra Residency A-102",
+                location: "Kandirpar, Cumilla",
+                status: "available",
+                price: 21500,
+                type: "rent",
+                size: "1240 sq ft",
+                bedrooms: 3,
+                bathrooms: 2,
+                floor: "1st Floor",
+                facilities: ["Parking", "Lift", "Generator", "Security"],
+                description: "Modern 3-bedroom apartment in Kandirpar with a spacious layout and reliable amenities.",
+                contact: {
+                    phone: "+880-1234-567813",
+                    whatsapp: "+880-1234-567813",
+                    email: "info@asraproperties.com"
+                }
+            },
+            {
+                id: 1302,
+                name: "Asra Heights B-305",
+                location: "Shashongacha, Cumilla",
+                status: "available",
+                price: 27500,
+                type: "rent",
+                size: "1420 sq ft",
+                bedrooms: 4,
+                bathrooms: 3,
+                floor: "3rd Floor",
+                facilities: ["Parking", "Lift", "Security", "Rooftop Garden"],
+                description: "Spacious 4-bedroom flat in Shashongacha with rooftop garden access and community facilities.",
+                contact: {
+                    phone: "+880-1234-567813",
+                    whatsapp: "+880-1234-567813",
+                    email: "info@asraproperties.com"
+                }
+            },
+            {
+                id: 1303,
+                name: "Asra Villa C-201",
+                location: "Kotbari, Cumilla",
+                status: "sale",
+                price: 3950000,
+                type: "sale",
+                size: "1880 sq ft",
+                bedrooms: 5,
+                bathrooms: 4,
+                floor: "2nd Floor",
+                facilities: ["Parking", "Garden", "Generator", "Security"],
+                description: "Luxury villa in Kotbari with a private garden and premium architecture, ideal for families.",
+                contact: {
+                    phone: "+880-1234-567813",
+                    whatsapp: "+880-1234-567813",
+                    email: "info@asraproperties.com"
+                }
+            }
+        ]
+    },
+    {
+        id: 14,
+        name: "New Life Land Properties Ltd",
+        logo: "NLLP",
+        flatsCount: 8,
+        flats: [
+            {
+                id: 1501,
+                name: "New Life Residency A-101",
+                location: "Kandirpar, Cumilla",
+                status: "available",
+                price: 21800,
+                type: "rent",
+                size: "1230 sq ft",
+                bedrooms: 3,
+                bathrooms: 2,
+                floor: "1st Floor",
+                facilities: ["Parking", "Security", "Lift", "Generator"],
+                description: "Modern 3-bedroom apartment in Kandirpar with open living spaces and reliable amenities.",
+                contact: {
+                    phone: "+880-1234-567815",
+                    whatsapp: "+880-1234-567815",
+                    email: "info@newlifeland.com"
+                }
+            },
+            {
+                id: 1502,
+                name: "New Life Heights B-302",
+                location: "Racecourse, Cumilla",
+                status: "available",
+                price: 28500,
+                type: "rent",
+                size: "1480 sq ft",
+                bedrooms: 4,
+                bathrooms: 3,
+                floor: "3rd Floor",
+                facilities: ["Parking", "Security", "Lift", "Rooftop Garden"],
+                description: "Spacious 4-bedroom flat in Racecourse with rooftop garden access and community amenities.",
+                contact: {
+                    phone: "+880-1234-567815",
+                    whatsapp: "+880-1234-567815",
+                    email: "info@newlifeland.com"
+                }
+            },
+            {
+                id: 1503,
+                name: "New Life Villa C-201",
+                location: "Kotbari, Cumilla",
+                status: "sale",
+                price: 4050000,
+                type: "sale",
+                size: "1920 sq ft",
+                bedrooms: 5,
+                bathrooms: 4,
+                floor: "2nd Floor",
+                facilities: ["Parking", "Garden", "Security", "Generator"],
+                description: "Beautiful villa in Kotbari for sale, offering spacious design and a private garden for peaceful living.",
+                contact: {
+                    phone: "+880-1234-567815",
+                    whatsapp: "+880-1234-567815",
+                    email: "info@newlifeland.com"
+                }
+            }
+        ]
+    },
+    {
+        id: 15,
+        name: "Building Technology Ideas LTD",
+        logo: "BTI",
+        flatsCount: 9,
+        flats: [
+            {
+                id: 1601,
+                name: "BTI Residency A-202",
+                location: "Kandirpar, Cumilla",
+                status: "available",
+                price: 23500,
+                type: "rent",
+                size: "1280 sq ft",
+                bedrooms: 3,
+                bathrooms: 2,
+                floor: "2nd Floor",
+                facilities: ["Parking", "Security", "Lift", "Generator"],
+                description: "Modern 3-bedroom flat in Kandirpar with reliable facilities and excellent layout for family living.",
+                contact: {
+                    phone: "+880-1234-567816",
+                    whatsapp: "+880-1234-567816",
+                    email: "info@bti.com"
+                }
+            },
+            {
+                id: 1602,
+                name: "BTI Heights B-405",
+                location: "Shashongacha, Cumilla",
+                status: "available",
+                price: 29500,
+                type: "rent",
+                size: "1500 sq ft",
+                bedrooms: 4,
+                bathrooms: 3,
+                floor: "4th Floor",
+                facilities: ["Parking", "Lift", "Security", "Rooftop Garden", "Community Hall"],
+                description: "Spacious 4-bedroom apartment in Shashongacha with rooftop garden and community hall facilities.",
+                contact: {
+                    phone: "+880-1234-567816",
+                    whatsapp: "+880-1234-567816",
+                    email: "info@bti.com"
+                }
+            },
+            {
+                id: 1603,
+                name: "BTI Villa C-101",
+                location: "Kotbari, Cumilla",
+                status: "sale",
+                price: 4300000,
+                type: "sale",
+                size: "2000 sq ft",
+                bedrooms: 5,
+                bathrooms: 4,
+                floor: "Ground Floor",
+                facilities: ["Parking", "Garden", "Security", "Generator"],
+                description: "Exclusive villa for sale in Kotbari offering premium lifestyle, spacious garden, and high-end finishes.",
+                contact: {
+                    phone: "+880-1234-567816",
+                    whatsapp: "+880-1234-567816",
+                    email: "info@bti.com"
+                }
+            }
+        ]
+    },
+    {
+        id: 16,
+        name: "Suman Properties Ltd",
+        logo: "SPL",
+        flatsCount: 7,
+        flats: [
+            {
+                id: 1701,
+                name: "SPL Residency A-102",
+                location: "Kandirpar, Cumilla",
+                status: "available",
+                price: 21000,
+                type: "rent",
+                size: "1180 sq ft",
+                bedrooms: 3,
+                bathrooms: 2,
+                floor: "1st Floor",
+                facilities: ["Parking", "Security", "Lift", "Generator"],
+                description: "Comfortable 3-bedroom apartment in Kandirpar with modern facilities and convenient access to city amenities.",
+                contact: {
+                    phone: "+880-1234-567817",
+                    whatsapp: "+880-1234-567817",
+                    email: "info@sumanproperties.com"
+                }
+            },
+            {
+                id: 1702,
+                name: "SPL Heights B-305",
+                location: "Racecourse, Cumilla",
+                status: "available",
+                price: 27500,
+                type: "rent",
+                size: "1450 sq ft",
+                bedrooms: 4,
+                bathrooms: 3,
+                floor: "3rd Floor",
+                facilities: ["Parking", "Lift", "Security", "Community Hall"],
+                description: "Spacious 4-bedroom flat in Racecourse offering community hall access and family-friendly design.",
+                contact: {
+                    phone: "+880-1234-567817",
+                    whatsapp: "+880-1234-567817",
+                    email: "info@sumanproperties.com"
+                }
+            },
+            {
+                id: 1703,
+                name: "SPL Villa C-201",
+                location: "Kotbari, Cumilla",
+                status: "sale",
+                price: 3900000,
+                type: "sale",
+                size: "1850 sq ft",
+                bedrooms: 5,
+                bathrooms: 4,
+                floor: "2nd Floor",
+                facilities: ["Parking", "Garden", "Security", "Generator"],
+                description: "Elegant villa in Kotbari for sale, featuring spacious interiors and private garden space for luxury living.",
+                contact: {
+                    phone: "+880-1234-567817",
+                    whatsapp: "+880-1234-567817",
+                    email: "info@sumanproperties.com"
+                }
+            }
+        ]
+    },
+    {
+        id: 17,
+        name: "Big Properties Ltd",
+        logo: "BPL",
+        flatsCount: 10,
+        flats: [
+            {
+                id: 1801,
+                name: "BPL Residency A-103",
+                location: "Kandirpar, Cumilla",
+                status: "available",
+                price: 24000,
+                type: "rent",
+                size: "1300 sq ft",
+                bedrooms: 3,
+                bathrooms: 2,
+                floor: "1st Floor",
+                facilities: ["Parking", "Security", "Lift", "Generator"],
+                description: "Well-planned 3-bedroom flat in Kandirpar with excellent ventilation and modern amenities.",
+                contact: {
+                    phone: "+880-1234-567818",
+                    whatsapp: "+880-1234-567818",
+                    email: "info@bigproperties.com"
+                }
+            },
+            {
+                id: 1802,
+                name: "BPL Heights B-404",
+                location: "Shashongacha, Cumilla",
+                status: "available",
+                price: 31000,
+                type: "rent",
+                size: "1550 sq ft",
+                bedrooms: 4,
+                bathrooms: 3,
+                floor: "4th Floor",
+                facilities: ["Parking", "Security", "Lift", "Community Hall", "Rooftop Garden"],
+                description: "Spacious 4-bedroom apartment in Shashongacha with rooftop garden and community hall facilities for residents.",
+                contact: {
+                    phone: "+880-1234-567818",
+                    whatsapp: "+880-1234-567818",
+                    email: "info@bigproperties.com"
+                }
+            },
+            {
+                id: 1803,
+                name: "BPL Villa C-301",
+                location: "Kotbari, Cumilla",
+                status: "sale",
+                price: 4600000,
+                type: "sale",
+                size: "2100 sq ft",
+                bedrooms: 5,
+                bathrooms: 4,
+                floor: "3rd Floor",
+                facilities: ["Parking", "Garden", "Security", "Generator"],
+                description: "Luxury villa in Kotbari available for sale, offering spacious living, a private garden, and premium fittings.",
+                contact: {
+                    phone: "+880-1234-567818",
+                    whatsapp: "+880-1234-567818",
+                    email: "info@bigproperties.com"
+                }
+            }
+        ]
+    },
+    {
+        id: 18,
+        name: "Reliance Development Association Ltd",
+        logo: "RDAL",
+        flatsCount: 9,
+        flats: [
+            {
+                id: 1901,
+                name: "RDAL Residency A-204",
+                location: "Kandirpar, Cumilla",
+                status: "available",
+                price: 22500,
+                type: "rent",
+                size: "1250 sq ft",
+                bedrooms: 3,
+                bathrooms: 2,
+                floor: "2nd Floor",
+                facilities: ["Parking", "Security", "Lift", "Generator"],
+                description: "Comfortable 3-bedroom flat in Kandirpar with excellent facilities and family-friendly design.",
+                contact: {
+                    phone: "+880-1234-567819",
+                    whatsapp: "+880-1234-567819",
+                    email: "info@rdal.com"
+                }
+            },
+            {
+                id: 1902,
+                name: "RDAL Heights B-406",
+                location: "Shashongacha, Cumilla",
+                status: "available",
+                price: 30500,
+                type: "rent",
+                size: "1520 sq ft",
+                bedrooms: 4,
+                bathrooms: 3,
+                floor: "4th Floor",
+                facilities: ["Parking", "Security", "Lift", "Rooftop Garden", "Community Hall"],
+                description: "Spacious 4-bedroom apartment with rooftop garden and community hall in Shashongacha, ideal for modern living.",
+                contact: {
+                    phone: "+880-1234-567819",
+                    whatsapp: "+880-1234-567819",
+                    email: "info@rdal.com"
+                }
+            },
+            {
+                id: 1903,
+                name: "RDAL Villa C-101",
+                location: "Kotbari, Cumilla",
+                status: "sale",
+                price: 4200000,
+                type: "sale",
+                size: "1950 sq ft",
+                bedrooms: 5,
+                bathrooms: 4,
+                floor: "Ground Floor",
+                facilities: ["Parking", "Garden", "Security", "Generator"],
+                description: "Beautiful villa for sale in Kotbari featuring a private garden, luxury fittings, and a secure environment.",
+                contact: {
+                    phone: "+880-1234-567819",
+                    whatsapp: "+880-1234-567819",
+                    email: "info@rdal.com"
+                }
+            }
+        ]
+    },
+    {
+        id: 19,
+        name: "Intex Building Ltd",
+        logo: "IBL",
+        flatsCount: 9,
+        flats: [
+            {
+                id: 2101,
+                name: "IBL Residency A-201",
+                location: "Kandirpar, Cumilla",
+                status: "available",
+                price: 23800,
+                type: "rent",
+                size: "1275 sq ft",
+                bedrooms: 3,
+                bathrooms: 2,
+                floor: "2nd Floor",
+                facilities: ["Parking", "Security", "Lift", "Generator"],
+                description: "Modern 3-bedroom apartment in Kandirpar with spacious rooms and excellent facilities.",
+                contact: {
+                    phone: "+880-1234-567821",
+                    whatsapp: "+880-1234-567821",
+                    email: "info@intexbuilding.com"
+                }
+            },
+            {
+                id: 2102,
+                name: "IBL Heights B-306",
+                location: "Shashongacha, Cumilla",
+                status: "available",
+                price: 31500,
+                type: "rent",
+                size: "1530 sq ft",
+                bedrooms: 4,
+                bathrooms: 3,
+                floor: "3rd Floor",
+                facilities: ["Parking", "Security", "Lift", "Rooftop Garden", "Community Hall"],
+                description: "Spacious 4-bedroom flat with rooftop garden and community facilities in Shashongacha.",
+                contact: {
+                    phone: "+880-1234-567821",
+                    whatsapp: "+880-1234-567821",
+                    email: "info@intexbuilding.com"
+                }
+            },
+            {
+                id: 2103,
+                name: "IBL Villa C-102",
+                location: "Kotbari, Cumilla",
+                status: "sale",
+                price: 4350000,
+                type: "sale",
+                size: "1980 sq ft",
+                bedrooms: 5,
+                bathrooms: 4,
+                floor: "Ground Floor",
+                facilities: ["Parking", "Garden", "Security", "Generator"],
+                description: "Luxury villa in Kotbari for sale featuring premium interiors, a private garden, and secure environment.",
+                contact: {
+                    phone: "+880-1234-567821",
+                    whatsapp: "+880-1234-567821",
+                    email: "info@intexbuilding.com"
+                }
+            }
+        ]
+    },
+    {
+        id: 20,
+        name: "Golden Holdings",
+        logo: "GH",
+        flatsCount: 8,
+        flats: [
+            {
+                id: 2001,
+                name: "Golden Residency A-105",
+                location: "Kandirpar, Cumilla",
+                status: "available",
+                price: 23000,
+                type: "rent",
+                size: "1260 sq ft",
+                bedrooms: 3,
+                bathrooms: 2,
+                floor: "1st Floor",
+                facilities: ["Parking", "Security", "Lift", "Generator"],
+                description: "Elegant 3-bedroom apartment in Kandirpar with modern amenities, ideal for families seeking comfort and convenience.",
+                contact: {
+                    phone: "+880-1234-567820",
+                    whatsapp: "+880-1234-567820",
+                    email: "info@goldenholdings.com"
+                }
+            },
+            {
+                id: 2002,
+                name: "Golden Heights B-307",
+                location: "Racecourse, Cumilla",
+                status: "available",
+                price: 29800,
+                type: "rent",
+                size: "1490 sq ft",
+                bedrooms: 4,
+                bathrooms: 3,
+                floor: "3rd Floor",
+                facilities: ["Parking", "Lift", "Security", "Rooftop Garden"],
+                description: "Spacious 4-bedroom apartment in Racecourse with rooftop garden and premium facilities for modern living.",
+                contact: {
+                    phone: "+880-1234-567820",
+                    whatsapp: "+880-1234-567820",
+                    email: "info@goldenholdings.com"
+                }
+            },
+            {
+                id: 2003,
+                name: "Golden Villa C-401",
+                location: "Kotbari, Cumilla",
+                status: "sale",
+                price: 4450000,
+                type: "sale",
+                size: "2050 sq ft",
+                bedrooms: 5,
+                bathrooms: 4,
+                floor: "Ground Floor",
+                facilities: ["Parking", "Garden", "Security", "Generator"],
+                description: "Luxury villa in Kotbari available for sale, featuring spacious design, private garden, and premium lifestyle.",
+                contact: {
+                    phone: "+880-1234-567820",
+                    whatsapp: "+880-1234-567820",
+                    email: "info@goldenholdings.com"
+                }
+            }
+        ]
     }
 ];
 
