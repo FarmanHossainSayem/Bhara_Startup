@@ -1,0 +1,29 @@
+/* Schedule Modal Styles */
+.schedule-container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.schedule-container h4 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.schedule-container .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.schedule-container .form-group:last-of-type {
+    margin-bottom: 2rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .schedule-container {
+        max-width: none;
+    }
+}
+
